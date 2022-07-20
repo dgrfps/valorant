@@ -4,7 +4,7 @@ void StartThreads();
 
 int main()
 {
-    ShowWindow(GetConsoleWindow(), SW_HIDE);
+    //ShowWindow(GetConsoleWindow(), SW_HIDE);
 
     StartThreads();
 }

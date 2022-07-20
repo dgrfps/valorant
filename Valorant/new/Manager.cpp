@@ -4,6 +4,7 @@
 #include "features/Trigger.hpp"
 
 #include "utils/HWID.hpp"
+#include "features/RCS.hpp"
 
 void exit_button()
 {
@@ -25,10 +26,11 @@ void StartThreads()
 
 	std::thread graphics(Render::Create);
 	std::thread trigger(Trigger::loop);
-
+	std::thread rcs(RCS::loop);
 	std::thread ext(exit_button);
-	ext.join();
 
+	ext.join();
 	graphics.join();
+	rcs.join();
 	trigger.join();
 }

@@ -3,7 +3,7 @@
 #include "../settings/Settings.h"
 #include "../utils/Keys.hpp"
 
-class Aim {
+class RCS {
 public:
 	static void loop() {
 		while (Settings::running) 
