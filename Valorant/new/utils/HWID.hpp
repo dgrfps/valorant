@@ -8,7 +8,7 @@
 
 class HWID {
 	private:
-		std::string GetHWID()
+		static std::string GetHWID()
 		{
 			std::string m_sResult;
 
@@ -56,9 +56,9 @@ class HWID {
 		}
 	public:
 
-		std::string checkHwid()
+		static std::string checkHwid()
 		{
-			std::vector<string> whitelist = { 
+			std::vector<std::string> whitelist = { 
 				"50026B766B009A32",
 				"LLJ3222000988s",
 			};
@@ -67,7 +67,7 @@ class HWID {
 			int founds=0;
 			bool one;
 
-			for(string found : whitelist)
+			for(std::string found : whitelist)
 				if (found == GetHWID())
 				{
 					founds++;
