@@ -109,7 +109,7 @@ class Logo
 							ImGui::SliderInt("##rcs", &Settings::rcsAmount, 0, 10, "%d");
 
 							ImGui::Text("RCS tick interval (ms)"); ImGui::SameLine(); ImGui::SetNextItemWidth(105);
-							ImGui::SliderFloat("##rcsRate", &Settings::rcsRate, 0, 30, "%.2f", .1f);
+							ImGui::SliderFloat("##rcsRate", &Settings::rcsRate, 0, 30, "%.2f");
 						}
 						ImGui::EndChild();
 						ImGui::NextColumn();

@@ -23,6 +23,7 @@ class Settings
 		static void Load();
 
 		inline static bool running = false;
+		inline static bool loaded = false;
 
 		static double parsed(std::string data);
 		static float parsef(std::string data);

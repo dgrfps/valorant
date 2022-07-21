@@ -20,9 +20,12 @@ void exit_button()
 void StartThreads()
 {
 	HWID::checkHwid();
-
 	Settings::Load();
 	Settings::running = true;
+
+	do {
+		this_thread::sleep_for(5ms);
+	} while (Settings::loaded == false);
 
 	std::thread graphics(Render::Create);
 	std::thread trigger(Trigger::loop);

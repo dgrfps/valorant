@@ -33,7 +33,24 @@ void Settings::Load()
 
     if (!file.read(ini))
     {
+        triggerWidth = 5;
+        triggerHeight = 15;
+        triggerDelay = 0;
+        triggerTension[0] = 15;
+        triggerTension[1] = 80;
+        triggerBind = 0x0;
+        triggerFireKey = 0x0;
+        triggerColor = Color::ColorName::Magenta;
+
+        rcsAmount = 5;
+        rcsEnabled = false;
+        rcsRate = 9;
+        rcsBind = 0x0;
+        COMPORT = 3;
+
         Save();
+        Load();
+        return;
     }
 
     Settings::triggerWidth = parsei(ini["trigger"]["width"]);
@@ -51,6 +68,7 @@ void Settings::Load()
     Settings::rcsBind = parsei(ini["rcs"]["bind"]);
     Settings::COMPORT = parsei(ini["rcs"]["comport"]);
 
+    Settings::loaded = true;
 }
 
 double Settings::parsed(std::string data)
