@@ -1,6 +1,13 @@
 # VALORANT  
-Undetected trigger using HSV color.  
-RCS Require arduino with usb/mouse signature
+Undetected external cheat using HSV color detection.
+Customizable via menu.
+- Panic key is 'Del', press it to exit the cheat.
+
+### IMPORTANT ###
+- Change the saturation if it starts missing too much.
+The default saturation is 15 - 80 (Min - Max)   
+  
+Only the RCS Require arduino with usb/mouse signature
 
 # Issues
 Open issues only while getting errorsbugs, or when found something really necessary to open.  
