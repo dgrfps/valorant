@@ -61,12 +61,13 @@ class Render
 
             glfwShowWindow(_window);
 
-            POINT pos;
-
             auto Ostrich = io.Fonts->AddFontFromMemoryCompressedTTF(Ostrich_compressed_data, Ostrich_compressed_size, 15);
             auto WalkAway = io.Fonts->AddFontFromMemoryCompressedTTF(Walkaway_compressed_data, Walkaway_compressed_size, 15);
 
             io.FontDefault = WalkAway;
+            io.WantSaveIniSettings = false;
+            io.IniFilename = NULL;
+
             ImGuiStyle* style = &ImGui::GetStyle();
             {
 				style->WindowPadding = ImVec2(15, 15);

@@ -100,7 +100,7 @@ string SimpleSerial::ReadSerialPort(int reply_wait_time, string syntax_type) {
 
 	CustomSyntax(syntax_type);
 
-	unsigned long start_time = time(nullptr);
+	unsigned long start_time = static_cast<unsigned long>(time(nullptr));
 
 	ClearCommError(io_handler_, &errors_, &status_);
 

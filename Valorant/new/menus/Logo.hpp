@@ -27,13 +27,13 @@ class Logo
 							ImGui::Text("Scan area");
 
 							ImGui::Text("Width"); ImGui::SameLine(); ImGui::SetNextItemWidth(175);
-							ImGui::SliderFloat("##Width", &Settings::triggerWidth, 0.0, 20.0, "%.f");
+							ImGui::SliderInt("##Width", &Settings::triggerWidth, 0, 20, "%d");
 
 							ImGui::Text("Height"); ImGui::SameLine(); ImGui::SetNextItemWidth(175);
-							ImGui::SliderFloat("##Height", &Settings::triggerHeight, 0.0, 20.0, "%.f");
+							ImGui::SliderInt("##Height", &Settings::triggerHeight, 0, 20, "%d");
 
 							ImGui::Text("Delay"); ImGui::SameLine(); ImGui::SetNextItemWidth(175);
-							ImGui::SliderFloat("##Delay", &Settings::triggerDelay, 0.0, 20.0, "%.f");
+							ImGui::SliderInt("##Delay", &Settings::triggerDelay, 0, 20, "%d");
 						}
 						ImGui::EndChild();
 
@@ -57,8 +57,16 @@ class Logo
 						ImGui::SliderInt2("##Saturation", Settings::triggerTension, 1, 100, "%d");
 
 						ImGui::Text("Outline color");
-						const char* items[] = { "PURPLE", "RED", "YELLOW" };
-						static const char* current_item = items[0];
+						const char* items[] = { "NONE", "PURPLE", "RED", "YELLOW" };
+						static const char* current_item = "-1";
+						
+						if(current_item == "-1") {
+							for (int n = 0; n < IM_ARRAYSIZE(items); n++)
+							{
+								if (items[n] == Color::toString(Settings::triggerColor))
+									current_item = items[n];
+							}
+						}
 
 						ImGui::SetNextItemWidth(175);
 						if (ImGui::BeginCombo("##combo", current_item)) // The second parameter is the label previewed before opening the combo.
@@ -69,7 +77,7 @@ class Logo
 								if (ImGui::Selectable(items[n], is_selected))
 								{
 									current_item = items[n];
-									if (current_item == "PURPLE")
+									if (current_item == "PURPLE" || current_item == "NONE")
 										Settings::triggerColor = Color::ColorName::Magenta;
 									if (current_item == "RED")
 										Settings::triggerColor = Color::ColorName::Vermelho;

@@ -8,13 +8,13 @@ using namespace std;
 
 class Color {
 	public:
-		static struct HSV {
+		struct HSV {
             int h;
             float s;
             float v;
         };
 
-        static enum ColorName
+        enum ColorName
         {
             Neutro,
             Vermelho,
@@ -33,9 +33,9 @@ class Color {
             case Color::Neutro:
                 return "neutro";
             case Color::Vermelho:
-                return "Red";
+                return "RED";
             case Color::Magenta:
-                return "Purple";
+                return "PURPLE";
             case Color::Violeta:
                 return "violeta";
             case Color::Azul:
@@ -45,7 +45,7 @@ class Color {
             case Color::Verde:
                 return "verde";
             case Color::Amarelo:
-                return "Yellow";
+                return "YELLOW";
             case Color::Laranja:
                 return "laranja";
             default:
@@ -67,13 +67,13 @@ class Color {
             if (cmax == cmin)
                 h = 0;
             else if (cmax == r)
-                h = 60 * ((g - b) / diff) + 360;
+                h = static_cast<int>(60 * ((g - b) / diff) + 360);
 
             else if (cmax == g)
-                h = 60 * ((b - r) / diff) + 120;
+                h = static_cast<int>(60 * ((b - r) / diff) + 120);
 
             else if (cmax == b)
-                h = 60 * ((r - g) / diff) + 240;
+                h = static_cast<int>(60 * ((r - g) / diff) + 240);
 
             if (diff != 0) {
                 s = (diff / cmax);
@@ -87,7 +87,7 @@ class Color {
             if ((color.v * 100) <= 13) return Color::ColorName::Neutro;
             if ((color.s * 100) <= 13) return Color::ColorName::Neutro;
 
-            float hue = color.h;
+            int hue = color.h;
 
             if (hue >= 345 || hue < 30)
                 return Color::ColorName::Vermelho;

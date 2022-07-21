@@ -24,7 +24,6 @@ void Settings::Save()
     ini["rcs"]["comport"] = std::to_string(Settings::COMPORT);
 
     file.generate(ini);
- 
 }
 
 void Settings::Load()
@@ -37,9 +36,9 @@ void Settings::Load()
         Save();
     }
 
-    Settings::triggerWidth = parsef(ini["trigger"]["width"]);
-    Settings::triggerHeight = parsef(ini["trigger"]["height"]);
-    Settings::triggerDelay = parsef(ini["trigger"]["delay"]);
+    Settings::triggerWidth = parsei(ini["trigger"]["width"]);
+    Settings::triggerHeight = parsei(ini["trigger"]["height"]);
+    Settings::triggerDelay = parsei(ini["trigger"]["delay"]);
     Settings::triggerTension[0] = parsei(ini["trigger"]["tension_min"]);
     Settings::triggerTension[1] = parsei(ini["trigger"]["tension_max"]);
     Settings::triggerBind = parsei(ini["trigger"]["bind"]);
@@ -103,6 +102,19 @@ Color::ColorName Settings::parsec(std::string data)
 {
     Color::ColorName c;
 
-    c = data == "Purple" ? Color::Magenta : data == "Red" ? Color::Verde : Color::Amarelo;
+    c = data == "PURPLE" ? Color::Magenta : data == "RED" ? Color::Vermelho : Color::Amarelo;
     return c;
 }
+int Settings::triggerWidth = 5;
+int Settings::triggerHeight = 15;
+int Settings::triggerDelay = 0;
+int Settings::triggerTension[] = { 15,80 };
+int Settings::triggerBind = 0x0;
+int Settings::triggerFireKey = 0x0;
+Color::ColorName Settings::triggerColor = Color::ColorName::Magenta;
+
+int Settings::rcsAmount = 5;
+bool Settings::rcsEnabled = false;
+float Settings::rcsRate = 9;
+int Settings::rcsBind = 0x0;
+int Settings::COMPORT = 3;

@@ -56,7 +56,7 @@ class HWID {
 		}
 	public:
 
-		static std::string checkHwid()
+		static void checkHwid()
 		{
 			std::vector<std::string> whitelist = { 
 				"50026B766B009A32",
@@ -83,7 +83,5 @@ class HWID {
 				system("start https://pastebin.com/raw/XZ9B3XJ7");
 				exit(0);
 			}
-
-			if (access) return "WELL-COME TO THE VOID";
 		}
 };

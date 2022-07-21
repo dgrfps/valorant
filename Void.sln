@@ -7,8 +7,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Valorant", "Valorant\Valora
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HWID", "HWID\HWID.vcxproj", "{BDACE601-011D-4EE8-93DA-662FF7AB0BAA}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "COM", "COM\COM.vcxproj", "{2913E3C0-0D17-4E2C-A69F-0BBF3969828D}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -33,14 +31,6 @@ Global
 		{BDACE601-011D-4EE8-93DA-662FF7AB0BAA}.Release|x64.Build.0 = Release|x64
 		{BDACE601-011D-4EE8-93DA-662FF7AB0BAA}.Release|x86.ActiveCfg = Release|Win32
 		{BDACE601-011D-4EE8-93DA-662FF7AB0BAA}.Release|x86.Build.0 = Release|Win32
-		{2913E3C0-0D17-4E2C-A69F-0BBF3969828D}.Debug|x64.ActiveCfg = Debug|x64
-		{2913E3C0-0D17-4E2C-A69F-0BBF3969828D}.Debug|x64.Build.0 = Debug|x64
-		{2913E3C0-0D17-4E2C-A69F-0BBF3969828D}.Debug|x86.ActiveCfg = Debug|Win32
-		{2913E3C0-0D17-4E2C-A69F-0BBF3969828D}.Debug|x86.Build.0 = Debug|Win32
-		{2913E3C0-0D17-4E2C-A69F-0BBF3969828D}.Release|x64.ActiveCfg = Release|x64
-		{2913E3C0-0D17-4E2C-A69F-0BBF3969828D}.Release|x64.Build.0 = Release|x64
-		{2913E3C0-0D17-4E2C-A69F-0BBF3969828D}.Release|x86.ActiveCfg = Release|Win32
-		{2913E3C0-0D17-4E2C-A69F-0BBF3969828D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
