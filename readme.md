@@ -8,7 +8,7 @@ Customizable via menu.
 The default saturation is 15 - 80 (Min - Max)     
   
 Only the RCS Require arduino with usb/mouse signature   
-	- Push the source [VMouse.ino](VMouse\VMouse.ino) to arduino before using RCS.  
+	- Push the source [VMouse.ino](VMouse/VMouse.ino) to arduino before using RCS.  
 	  
 # Issues
 Open issues only while getting errorsbugs, or when found something really necessary to open.  
