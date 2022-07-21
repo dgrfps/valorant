@@ -1,7 +1,6 @@
 # VALORANT  
 Undetected trigger using HSV color.  
-1st. Bind fire button to 'K' (On valorant settings)  
-2nd. Set enemy outline to purplemagenta.  
+RCS Require arduino with usb/mouse signature
 
 # Issues
 Open issues only while getting errorsbugs, or when found something really necessary to open.  

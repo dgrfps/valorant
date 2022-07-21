@@ -20,7 +20,7 @@ public:
 		int targetX = 0, targetY = 0;
 		while (Settings::running)
 		{
-			if ((GetAsyncKeyState(VK_XBUTTON2) && KEYDOWN) && !(GetAsyncKeyState(VK_LBUTTON) && isDown)) {
+			if ((GetAsyncKeyState(Settings::triggerBind) & KEYDOWN) && !(GetAsyncKeyState(VK_LBUTTON) & KEYDOWN)) {
 				for(int _y = 0; _y < Settings::triggerHeight; _y++)
 					for (int _x = 0; _x < Settings::triggerWidth; _x++)
 					{
@@ -32,19 +32,19 @@ public:
 						rgbTriple.rgbtGreen = GetGValue(color);
 						rgbTriple.rgbtBlue = GetBValue(color);
 
-						Color::HSV rgbToHue = toHSV((float)rgbTriple.rgbtRed, (float)rgbTriple.rgbtGreen, (float)rgbTriple.rgbtBlue);
-						Color::ColorName name = Categorize(rgbToHue);
+						Color::HSV rgbToHue = Color::toHSV((float)rgbTriple.rgbtRed, (float)rgbTriple.rgbtGreen, (float)rgbTriple.rgbtBlue);
+						Color::ColorName name = Color::Categorize(rgbToHue);
 
-						if (name == Color::Magenta)
+						if (name == Settings::triggerColor)
 						{
 							if (rgbToHue.s * 100 <= 80 && rgbToHue.s * 100 > 15)
 							{
-								if ((GetAsyncKeyState(VK_XBUTTON2) && KEYDOWN) && !(GetAsyncKeyState(VK_LBUTTON) && isDown)) {
+								if ((GetAsyncKeyState(Settings::triggerBind) && KEYDOWN) && !(GetAsyncKeyState(VK_LBUTTON) && KEYDOWN)) {
 									std::this_thread::sleep_for(chrono::milliseconds((long) Settings::triggerDelay));
 
-									keybd_event(VK_K, 0, KEYDOWN, 0);
+									keybd_event(Settings::triggerFireKey, 0, KEYPRESS, 0);
 									this_thread::sleep_for(10ms);
-									keybd_event(VK_K, 0, KEYUP, 0);
+									keybd_event(Settings::triggerFireKey, 0, KEYUP, 0);
 
 									break;
 								}

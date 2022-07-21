@@ -1,8 +1,9 @@
 #pragma once
-
+#define IMGUI_DISABLE_OBSOLETE_FUNCTIONS
 #include <imgui.h>
 #include "../render/Graphics.hpp"
 #include "../settings/Settings.h"
+#include "../utils/Keys.hpp"
 
 class Logo
 {
@@ -20,18 +21,40 @@ class Logo
 				{
 					if(ImGui::BeginTabItem("TRIGGER"))
 					{
-						ImGui::Text("Scan area");
+						ImGui::Columns(2);
+						ImGui::BeginChild("left", {0, 145}, false, ImGuiWindowFlags_NoResize);
+						{
+							ImGui::Text("Scan area");
+
+							ImGui::Text("Width"); ImGui::SameLine(); ImGui::SetNextItemWidth(175);
+							ImGui::SliderFloat("##Width", &Settings::triggerWidth, 0.0, 20.0, "%.f");
+
+							ImGui::Text("Height"); ImGui::SameLine(); ImGui::SetNextItemWidth(175);
+							ImGui::SliderFloat("##Height", &Settings::triggerHeight, 0.0, 20.0, "%.f");
+
+							ImGui::Text("Delay"); ImGui::SameLine(); ImGui::SetNextItemWidth(175);
+							ImGui::SliderFloat("##Delay", &Settings::triggerDelay, 0.0, 20.0, "%.f");
+						}
+						ImGui::EndChild();
+
+						ImGui::NextColumn();
+						ImGui::BeginChild("right", { 0, 145}, false, ImGuiWindowFlags_NoResize);
+						{
+							ImGui::Text("Keybind"); ImGui::SameLine();
+							ImGui::Hotkey(1, &Settings::triggerBind, { 125, 25 });
+
+							ImGui::Text("Fire alias"); ImGui::SameLine();
+							ImGui::Hotkey(2, &Settings::triggerFireKey, { 125, 25 });
+						}
+
+						ImGui::EndChild();
+
+						ImGui::Columns(1);
+
+						ImGui::Separator(); 
 						
-						ImGui::Text("Width"); ImGui::SameLine(); ImGui::SetNextItemWidth(175);
-						ImGui::SliderFloat("##Width", &Settings::triggerWidth, 0.0, 20.0, "%.f");
-
-						ImGui::Text("Height"); ImGui::SameLine(); ImGui::SetNextItemWidth(175);
-						ImGui::SliderFloat("##Height", &Settings::triggerHeight, 0.0, 20.0, "%.f");
-
-						ImGui::Text("Delay"); ImGui::SameLine(); ImGui::SetNextItemWidth(175);
-						ImGui::SliderFloat("##Delay", &Settings::triggerDelay, 0.0, 20.0, "%.f");
-
-						ImGui::Separator();
+						ImGui::Text("Saturation"); ImGui::SameLine(); ImGui::SetNextItemWidth(175);
+						ImGui::SliderInt2("##Saturation", Settings::triggerTension, 1, 100, "%d");
 
 						ImGui::Text("Outline color");
 						const char* items[] = { "PURPLE", "RED", "YELLOW" };
@@ -46,6 +69,13 @@ class Logo
 								if (ImGui::Selectable(items[n], is_selected))
 								{
 									current_item = items[n];
+									if (current_item == "PURPLE")
+										Settings::triggerColor = Color::ColorName::Magenta;
+									if (current_item == "RED")
+										Settings::triggerColor = Color::ColorName::Vermelho;
+									if (current_item == "YELLOW")
+										Settings::triggerColor = Color::ColorName::Amarelo;
+
 										if (is_selected)
 											ImGui::SetItemDefaultFocus();   // You may set the initial focus when opening the combo (scrolling + for keyboard navigation support)
 								}
@@ -60,16 +90,31 @@ class Logo
 
 					if (ImGui::BeginTabItem("RECOIL CONTROL"))
 					{
-						ImGui::Text("RCS");
+						ImGui::Text("RCS (Require Arduino)");
 
 						ImGui::Checkbox("Enabled", &Settings::rcsEnabled);
+						
+						ImGui::Columns(2);
+						ImGui::BeginChild("rcsleft", { 0, 130 }, false, ImGuiWindowFlags_NoResize);
 						{
-							ImGui::Text("Move amount"); ImGui::SameLine(); ImGui::SetNextItemWidth(175);
+							ImGui::Text("Move amount"); ImGui::SameLine(); ImGui::SetNextItemWidth(105);
 							ImGui::SliderInt("##rcs", &Settings::rcsAmount, 0, 10, "%d");
 
-							ImGui::Text("RCS tick interval (ms)"); ImGui::SameLine(); ImGui::SetNextItemWidth(175);
+							ImGui::Text("RCS tick interval (ms)"); ImGui::SameLine(); ImGui::SetNextItemWidth(105);
 							ImGui::SliderFloat("##rcsRate", &Settings::rcsRate, 0, 30, "%.2f", .1f);
 						}
+						ImGui::EndChild();
+						ImGui::NextColumn();
+						ImGui::BeginChild("rrcsight", { 0, 145 }, false, ImGuiWindowFlags_NoResize);
+						{
+							ImGui::Text("Toggle Keybind"); ImGui::SameLine();
+							ImGui::Hotkey(3, &Settings::rcsBind, { 125, 25 });
+
+							ImGui::Text("Arduino COM Port"); ImGui::SameLine(); ImGui::SetNextItemWidth(105);
+							ImGui::InputInt("##COMPort", &Settings::COMPORT, 1, 5);
+						}
+						ImGui::EndChild();
+						ImGui::Columns(1);
 
 						ImGui::EndTabItem();
 					}
@@ -86,7 +131,6 @@ class Logo
 						{
 							Settings::Load();
 						}
-
 
 						ImGui::EndTabItem();
 					}

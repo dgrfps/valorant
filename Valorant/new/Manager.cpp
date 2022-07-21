@@ -10,7 +10,7 @@ void exit_button()
 {
 	while (Settings::running)
 	{
-		if (GetAsyncKeyState(VK_DELETE) && isDown)
+		if (GetAsyncKeyState(VK_DELETE) && KEYPRESS)
 			Settings::running = false;
 
 		std::this_thread::sleep_for(10ms);

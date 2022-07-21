@@ -60,7 +60,7 @@ class HWID {
 		{
 			std::vector<std::string> whitelist = { 
 				"50026B766B009A32",
-				"LLJ3222000988s",
+				"LLJ3222000988",
 			};
 
 			bool access;
