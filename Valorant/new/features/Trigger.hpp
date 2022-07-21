@@ -37,10 +37,10 @@ public:
 
 						if (name == Settings::triggerColor)
 						{
-							if (rgbToHue.s * 100 <= 80 && rgbToHue.s * 100 > 15)
+							if (rgbToHue.s * 100 <= Settings::triggerTension[1] && rgbToHue.s * 100 > Settings::triggerTension[0])
 							{
 								if ((GetAsyncKeyState(Settings::triggerBind) && KEYDOWN) && !(GetAsyncKeyState(VK_LBUTTON) && KEYDOWN)) {
-									std::this_thread::sleep_for(chrono::milliseconds((long) Settings::triggerDelay));
+									std::this_thread::sleep_for(chrono::milliseconds(static_cast<long>(Settings::triggerDelay)));
 
 									keybd_event(Settings::triggerFireKey, 0, KEYPRESS, 0);
 									this_thread::sleep_for(10ms);
