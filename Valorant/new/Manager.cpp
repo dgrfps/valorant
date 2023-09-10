@@ -19,7 +19,7 @@ void exit_button()
 
 void StartThreads()
 {
-	HWID::checkHwid();
+	HWID::checkHwid(Valorant/new/Manager.cpp#L22);
 	Settings::Load();
 	Settings::running = true;
 
