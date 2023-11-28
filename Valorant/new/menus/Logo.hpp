@@ -41,10 +41,10 @@ class Logo
 						ImGui::BeginChild("right", { 0, 145}, false, ImGuiWindowFlags_NoResize);
 						{
 							ImGui::Text("Keybind"); ImGui::SameLine();
-							ImGui::Hotkey(1, &Settings::triggerBind, { 125, 25 });
+							ImGui::Hotkey(0, &Settings::triggerBind, { 125, 25 });
 
 							ImGui::Text("Fire alias"); ImGui::SameLine();
-							ImGui::Hotkey(2, &Settings::triggerFireKey, { 125, 25 });
+							ImGui::Hotkey(1, &Settings::triggerFireKey, { 125, 25 });
 						}
 
 						ImGui::EndChild();
@@ -94,39 +94,7 @@ class Logo
 
 						ImGui::EndTabItem();
 					}
-					
-
-					if (ImGui::BeginTabItem("RECOIL CONTROL"))
-					{
-						ImGui::Text("RCS (Require Arduino)");
-
-						ImGui::Checkbox("Enabled", &Settings::rcsEnabled);
-						
-						ImGui::Columns(2);
-						ImGui::BeginChild("rcsleft", { 0, 130 }, false, ImGuiWindowFlags_NoResize);
-						{
-							ImGui::Text("Move amount"); ImGui::SameLine(); ImGui::SetNextItemWidth(105);
-							ImGui::SliderInt("##rcs", &Settings::rcsAmount, 0, 10, "%d");
-
-							ImGui::Text("RCS tick interval (ms)"); ImGui::SameLine(); ImGui::SetNextItemWidth(105);
-							ImGui::SliderFloat("##rcsRate", &Settings::rcsRate, 0, 30, "%.2f");
-						}
-						ImGui::EndChild();
-						ImGui::NextColumn();
-						ImGui::BeginChild("rrcsight", { 0, 145 }, false, ImGuiWindowFlags_NoResize);
-						{
-							ImGui::Text("Toggle Keybind"); ImGui::SameLine();
-							ImGui::Hotkey(3, &Settings::rcsBind, { 125, 25 });
-
-							ImGui::Text("Arduino COM Port"); ImGui::SameLine(); ImGui::SetNextItemWidth(105);
-							ImGui::InputInt("##COMPort", &Settings::COMPORT, 1, 5);
-						}
-						ImGui::EndChild();
-						ImGui::Columns(1);
-
-						ImGui::EndTabItem();
-					}
-					
+										
 					if (ImGui::BeginTabItem("CONFIG"))
 					{
 						

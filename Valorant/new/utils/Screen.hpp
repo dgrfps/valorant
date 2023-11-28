@@ -3,8 +3,7 @@
 #include <Windows.h>
 #include <thread>
 #include <chrono>
-
-#include "./Math.hpp"
+#include "vec2.h"
 
 class Screen
 {
@@ -22,9 +21,9 @@ class Screen
 				x = desktop.right;
 				y = desktop.bottom;
 
-				std::this_thread::sleep_for(std::chrono::milliseconds(15));
+				std::this_thread::sleep_for(std::chrono::milliseconds(1));
 			} while (x == 0 || y == 0);
 
-			return vec2{ x,y };
+			return { x, y };
 		}
 };

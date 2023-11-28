@@ -20,10 +20,13 @@ public:
 		int targetX = 0, targetY = 0;
 		while (Settings::running)
 		{
+			// IF Trigger bind is pressed and we are not firing.
 			if ((GetAsyncKeyState(Settings::triggerBind) & KEYDOWN) && !(GetAsyncKeyState(VK_LBUTTON) & KEYDOWN)) {
+				//Square from (X,Y) = (0,0) to (Settings::triggerWidth, Settings::triggerHeight)
 				for(int _y = 0; _y < Settings::triggerHeight; _y++)
 					for (int _x = 0; _x < Settings::triggerWidth; _x++)
 					{
+						//Centering the square
 						targetY = (_y < Settings::triggerHeight / 2) ? (((Settings::triggerHeight / 2) - _y) * -1) : ((Settings::triggerHeight / 2) - _y);
 						targetX = (_x < Settings::triggerWidth / 2) ? (((Settings::triggerWidth / 2) - _x) * -1) : ((Settings::triggerWidth / 2) - _x);
 

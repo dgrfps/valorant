@@ -348,33 +348,44 @@ class Keys
 
 namespace ImGui
 {
-    void Hotkey(int id, int* k, const ImVec2& size_arg = ImVec2(0, 0))
+    void Hotkey(int id, int* key, const ImVec2& size_arg = ImVec2(0, 0))
     {
-        std::string hash = "##" ;
-        
-        if (Keys::waitingforkey[id] == false) {
-            std::string label = (Keys::KeyNames[*(int*)k] + hash);
-            if (ImGui::Button(label.c_str(), size_arg))
+        string waiting_label = "...";
+        string label = "##hk";
+        label += id;
+        waiting_label += label;
+
+        // Preventing id conflict by passing '##hk' + 'id' || will conflict only if 'id' var already in use.
+
+        //If not detecting for a keypress, display current key. 
+        if (Keys::waitingforkey[id] == false)
+        {
+            string s = Keys::KeyNames[*(int*)key];
+            s += label.c_str();
+
+            if (ImGui::Button(s.c_str(), size_arg))
+            {
+                this_thread::sleep_for(5ms);
                 Keys::waitingforkey[id] = true;
+            }
         }
-
-        else if (Keys::waitingforkey[id] == true) {
-            std::string label = "..." + hash + "w";
-
-            ImGui::Button(label.c_str(), size_arg);
-            std::this_thread::sleep_for(std::chrono::milliseconds(25));
-
+        else if (Keys::waitingforkey[id] == true)
+        {
+            ImGui::Button(waiting_label.c_str(), size_arg); //Print a '...' button
+            
             for (auto& Key : Keys::KeyCodes)
             {
-                if (GetAsyncKeyState(Key)) {
-                    *(int*)k = Key;
-                    if(Key == VK_ESCAPE)
-                        *(int*)k = 0;
+                
+                if (GetAsyncKeyState(Key) && Key != VK_LBUTTON) //Never gonna bind to mouse click button;
+                {
+                    *(int*)key = Key;
+                    if (Key == VK_ESCAPE)
+                        *(int*)key = 0;
 
-                    Keys::waitingforkey[id] = false;
+                    Keys::waitingforkey[id] = false;    
                     break;
                 }
             }
-        }
+        }        
     }
 }

@@ -1,6 +1,6 @@
 #pragma once
 
-#ifndef MATH_
+#ifndef _vec2
 
 template<typename T>
 struct vec2
@@ -9,5 +9,5 @@ struct vec2
 	T y;
 };
 
-#define MATH_
-#endif // !MATH_
+#define _vec2
+#endif // !_vec2

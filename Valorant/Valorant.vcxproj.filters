@@ -27,19 +27,7 @@
     <ClInclude Include="new\settings\ConfigParser.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="new\utils\HWID.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="new\utils\Keys.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="new\serial\Serial.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="new\features\RCS.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="new\utils\Mouse.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\imconfig.h">
@@ -78,21 +66,18 @@
     <ClInclude Include="new\utils\Screen.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="new\utils\Math.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="new\menus\Logo.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="new\settings\Settings.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="new\utils\vec2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="new\serial\Serial.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="include\imgui.cpp">

@@ -61,8 +61,8 @@ class Render
 
             glfwShowWindow(_window);
 
-            auto Ostrich = io.Fonts->AddFontFromMemoryCompressedTTF(Ostrich_compressed_data, Ostrich_compressed_size, 15);
-            auto WalkAway = io.Fonts->AddFontFromMemoryCompressedTTF(Walkaway_compressed_data, Walkaway_compressed_size, 15);
+            auto Ostrich = io.Fonts->AddFontFromMemoryCompressedTTF(Ostrich_compressed_data, Ostrich_compressed_size, 18);
+            auto WalkAway = io.Fonts->AddFontFromMemoryCompressedTTF(Walkaway_compressed_data, Walkaway_compressed_size, 18);
 
             io.FontDefault = WalkAway;
             io.WantSaveIniSettings = false;
@@ -139,6 +139,9 @@ class Render
                 ImGui::NewFrame();
 
                 Logo::Draw();
+
+                if (GetAsyncKeyState(VK_DELETE) && KEYPRESS)
+                    Settings::running = false;
 
                 // Rendering
                 ImGui::Render();

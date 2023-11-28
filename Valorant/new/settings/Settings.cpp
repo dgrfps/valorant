@@ -17,12 +17,6 @@ void Settings::Save()
     ini["trigger"]["fireKey"] = std::to_string(Settings::triggerFireKey);
     ini["trigger"]["color"] = Color::toString(Settings::triggerColor);
 
-    ini["rcs"]["rate"] = std::to_string(Settings::rcsRate);
-    ini["rcs"]["amount"] = std::to_string(Settings::rcsAmount);
-    ini["rcs"]["enabled"] = Settings::rcsEnabled ? "true" : "false";
-    ini["rcs"]["bind"] = std::to_string(Settings::rcsBind);
-    ini["rcs"]["comport"] = std::to_string(Settings::COMPORT);
-
     file.generate(ini);
 }
 
@@ -42,12 +36,6 @@ void Settings::Load()
         triggerFireKey = 0x0;
         triggerColor = Color::ColorName::Magenta;
 
-        rcsAmount = 5;
-        rcsEnabled = false;
-        rcsRate = 9;
-        rcsBind = 0x0;
-        COMPORT = 3;
-
         Save();
         Load();
         return;
@@ -61,12 +49,6 @@ void Settings::Load()
     Settings::triggerBind = parsei(ini["trigger"]["bind"]);
     Settings::triggerFireKey = parsei(ini["trigger"]["fireKey"]);
     Settings::triggerColor = parsec(ini["trigger"]["color"]);
-
-    Settings::rcsEnabled = ini["rcs"]["enabled"] == "true";
-    Settings::rcsRate = parsef(ini["rcs"]["rate"]);
-    Settings::rcsAmount = parsei(ini["rcs"]["amount"]);
-    Settings::rcsBind = parsei(ini["rcs"]["bind"]);
-    Settings::COMPORT = parsei(ini["rcs"]["comport"]);
 
     Settings::loaded = true;
 }
@@ -130,9 +112,3 @@ int Settings::triggerTension[] = { 15,80 };
 int Settings::triggerBind = 0x0;
 int Settings::triggerFireKey = 0x0;
 Color::ColorName Settings::triggerColor = Color::ColorName::Magenta;
-
-int Settings::rcsAmount = 5;
-bool Settings::rcsEnabled = false;
-float Settings::rcsRate = 9;
-int Settings::rcsBind = 0x0;
-int Settings::COMPORT = 3;

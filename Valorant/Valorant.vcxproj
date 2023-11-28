@@ -74,7 +74,7 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)release\$(ProjectName)\$(Configuration)$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)release\$(ProjectName)\$(Configuration)$(Platform)\trash\</IntDir>
-    <LibraryPath>C:\Librarys\glfw\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath>D:\libs\glfw-3.3.8.bin.WIN64\lib-vc2022;$(LibraryPath)</LibraryPath>
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
     <TargetName>word</TargetName>
   </PropertyGroup>
@@ -82,7 +82,7 @@
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)release\$(ProjectName)\$(Configuration)$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)release\$(ProjectName)\$(Configuration)$(Platform)\trash\</IntDir>
-    <LibraryPath>C:\Librarys\glfw\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath>D:\libs\glfw-3.3.8.bin.WIN64\lib-vc2022;$(LibraryPath)</LibraryPath>
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
     <TargetName>word</TargetName>
   </PropertyGroup>
@@ -90,7 +90,7 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)release\$(ProjectName)\$(Configuration)$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)release\$(ProjectName)\$(Configuration)$(Platform)\trash\</IntDir>
-    <LibraryPath>C:\Librarys\glfw\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath>D:\libs\glfw-3.3.8.bin.WIN64\lib-vc2022;$(LibraryPath)</LibraryPath>
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
     <TargetName>word</TargetName>
   </PropertyGroup>
@@ -98,7 +98,7 @@
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)release\$(ProjectName)\$(Configuration)$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)release\$(ProjectName)\$(Configuration)$(Platform)\trash\</IntDir>
-    <LibraryPath>C:\Librarys\glfw\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath>D:\libs\glfw-3.3.8.bin.WIN64\lib-vc2022;$(LibraryPath)</LibraryPath>
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
     <TargetName>word</TargetName>
   </PropertyGroup>
@@ -110,7 +110,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <LanguageStandard_C>Default</LanguageStandard_C>
-      <AdditionalIncludeDirectories>C:\Librarys\glfw\include;$(ProjectDir)\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\libs\glfw-3.3.8.bin.WIN64\include;$(ProjectDir)\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -128,7 +128,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <LanguageStandard_C>Default</LanguageStandard_C>
-      <AdditionalIncludeDirectories>C:\Librarys\glfw\include;$(ProjectDir)\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\libs\glfw-3.3.8.bin.WIN64\include;$(ProjectDir)\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -146,7 +146,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <LanguageStandard_C>Default</LanguageStandard_C>
-      <AdditionalIncludeDirectories>C:\Librarys\glfw\include;$(ProjectDir)\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\libs\glfw-3.3.8.bin.WIN64\include;$(ProjectDir)\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -164,7 +164,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <LanguageStandard_C>Default</LanguageStandard_C>
-      <AdditionalIncludeDirectories>C:\Librarys\glfw\include;$(ProjectDir)\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\libs\glfw-3.3.8.bin.WIN64\include;$(ProjectDir)\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -175,8 +175,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="new\features\RCS.hpp" />
-    <ClInclude Include="new\utils\Mouse.hpp" />
     <ClInclude Include="new\features\Trigger.hpp" />
     <ClInclude Include="include\imconfig.h" />
     <ClInclude Include="include\imgui.h" />
@@ -190,15 +188,13 @@
     <ClInclude Include="include\imstb_truetype.h" />
     <ClInclude Include="new\menus\Logo.hpp" />
     <ClInclude Include="new\render\Graphics.hpp" />
-    <ClInclude Include="new\utils\Math.hpp" />
     <ClInclude Include="new\utils\Screen.hpp" />
     <ClInclude Include="new\settings\Settings.h" />
     <ClInclude Include="new\utils\colors\color.hpp" />
     <ClInclude Include="new\utils\colors\HSV.hpp" />
     <ClInclude Include="new\settings\ConfigParser.hpp" />
-    <ClInclude Include="new\utils\HWID.hpp" />
     <ClInclude Include="new\utils\Keys.hpp" />
-    <ClInclude Include="new\serial\Serial.h" />
+    <ClInclude Include="new\utils\vec2.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="include\imgui.cpp" />
@@ -214,7 +210,6 @@
     <ClCompile Include="new\menus\fonts\walkaway.cpp" />
     <ClCompile Include="new\settings\Settings.cpp" />
     <ClCompile Include="Source.cpp" />
-    <ClCompile Include="new\serial\Serial.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

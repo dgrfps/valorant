@@ -13,12 +13,6 @@ class Settings
 		static int triggerFireKey;
 		static Color::ColorName triggerColor;
 
-		static int rcsAmount;
-		static bool rcsEnabled;
-		static float rcsRate;
-		static int rcsBind;
-		static int COMPORT;
-
 		static void Save();
 		static void Load();
 
