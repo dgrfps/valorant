@@ -109,7 +109,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <LanguageStandard_C>Default</LanguageStandard_C>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
       <AdditionalIncludeDirectories>D:\libs\glfw-3.3.8.bin.WIN64\include;$(ProjectDir)\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -127,11 +127,11 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <LanguageStandard_C>Default</LanguageStandard_C>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
       <AdditionalIncludeDirectories>D:\libs\glfw-3.3.8.bin.WIN64\include;$(ProjectDir)\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -145,7 +145,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <LanguageStandard_C>Default</LanguageStandard_C>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
       <AdditionalIncludeDirectories>D:\libs\glfw-3.3.8.bin.WIN64\include;$(ProjectDir)\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -163,11 +163,11 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <LanguageStandard_C>Default</LanguageStandard_C>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
       <AdditionalIncludeDirectories>D:\libs\glfw-3.3.8.bin.WIN64\include;$(ProjectDir)\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -175,7 +175,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="new\features\Trigger.hpp" />
+    <ClInclude Include="source\features\Trigger.hpp" />
     <ClInclude Include="include\imconfig.h" />
     <ClInclude Include="include\imgui.h" />
     <ClInclude Include="include\imgui_impl_glfw.h" />
@@ -186,15 +186,16 @@
     <ClInclude Include="include\imstb_rectpack.h" />
     <ClInclude Include="include\imstb_textedit.h" />
     <ClInclude Include="include\imstb_truetype.h" />
-    <ClInclude Include="new\menus\Logo.hpp" />
-    <ClInclude Include="new\render\Graphics.hpp" />
-    <ClInclude Include="new\utils\Screen.hpp" />
-    <ClInclude Include="new\settings\Settings.h" />
-    <ClInclude Include="new\utils\colors\color.hpp" />
-    <ClInclude Include="new\utils\colors\HSV.hpp" />
-    <ClInclude Include="new\settings\ConfigParser.hpp" />
-    <ClInclude Include="new\utils\Keys.hpp" />
-    <ClInclude Include="new\utils\vec2.h" />
+    <ClInclude Include="source\menus\Menu.hpp" />
+    <ClInclude Include="source\render\Graphics.hpp" />
+    <ClInclude Include="source\render\Style.h" />
+    <ClInclude Include="source\utils\Keybind.hpp" />
+    <ClInclude Include="source\utils\Screen.hpp" />
+    <ClInclude Include="source\settings\Settings.h" />
+    <ClInclude Include="source\utils\colors\HSV.hpp" />
+    <ClInclude Include="source\settings\ConfigParser.hpp" />
+    <ClInclude Include="source\utils\Keys.hpp" />
+    <ClInclude Include="source\utils\vec2.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="include\imgui.cpp" />
@@ -205,11 +206,12 @@
     <ClCompile Include="include\imgui_impl_win32.cpp" />
     <ClCompile Include="include\imgui_tables.cpp" />
     <ClCompile Include="include\imgui_widgets.cpp" />
-    <ClCompile Include="new\Manager.cpp" />
-    <ClCompile Include="new\menus\fonts\ostrich.cpp" />
-    <ClCompile Include="new\menus\fonts\walkaway.cpp" />
-    <ClCompile Include="new\settings\Settings.cpp" />
+    <ClCompile Include="source\Manager.hpp" />
+    <ClCompile Include="source\menus\fonts\ostrich.cpp" />
+    <ClCompile Include="source\menus\fonts\walkaway.cpp" />
+    <ClCompile Include="source\settings\Settings.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="source\utils\Keys.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

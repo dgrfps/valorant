@@ -1,14 +1,13 @@
 ﻿#include <Windows.h>
 
-void StartThreads();
+#include "source/Manager.hpp"
+
+int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
+{
+    Manager::Start();
+}
 
 int main()
 {
-#ifdef _DEBUG
-    ShowWindow(GetConsoleWindow(), SW_SHOW);
-#else
-    ShowWindow(GetConsoleWindow(), SW_HIDE);
-#endif // DEBUG
-
-    StartThreads();
+    Manager::Start();
 }

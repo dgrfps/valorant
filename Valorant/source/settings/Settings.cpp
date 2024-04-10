@@ -53,7 +53,7 @@ void Settings::Load()
     Settings::loaded = true;
 }
 
-double Settings::parsed(std::string data)
+double Settings::parsed(const std::string& data)
 {
     double d;
     
@@ -68,7 +68,7 @@ double Settings::parsed(std::string data)
 
     return d;
 }
-float Settings::parsef(std::string data)
+float Settings::parsef(const std::string& data)
 {
     float d;
 
@@ -83,7 +83,7 @@ float Settings::parsef(std::string data)
 
     return d;
 }
-int  Settings::parsei(std::string data)
+int  Settings::parsei(const std::string& data)
 {
     int d;
 
@@ -98,7 +98,7 @@ int  Settings::parsei(std::string data)
 
     return d;
 }
-Color::ColorName Settings::parsec(std::string data)
+Color::ColorName Settings::parsec(const std::string& data)
 {
     Color::ColorName c;
 

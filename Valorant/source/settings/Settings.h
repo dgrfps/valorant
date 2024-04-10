@@ -1,4 +1,8 @@
 #pragma once
+
+#ifndef SETTINGS_HPP
+#define SETTINGS_HPP
+
 #include "ConfigParser.hpp"
 #include "../utils/colors/HSV.hpp"
 
@@ -11,6 +15,7 @@ class Settings
 		static int triggerTension[2];
 		static int triggerBind;
 		static int triggerFireKey;
+
 		static Color::ColorName triggerColor;
 
 		static void Save();
@@ -19,8 +24,9 @@ class Settings
 		inline static bool running = false;
 		inline static bool loaded = false;
 
-		static double parsed(std::string data);
-		static float parsef(std::string data);
-		static int  parsei(std::string data);
-		static Color::ColorName parsec(std::string data);
+		static double parsed(const std::string& data);
+		static float parsef(const std::string& data);
+		static int  parsei(const std::string& data);
+		static Color::ColorName parsec(const std::string& data);
 };
+#endif

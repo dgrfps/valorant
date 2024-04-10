@@ -1,5 +1,9 @@
 #pragma once
 
+#ifndef HSV_HPP
+#define HSV_HPP
+
+
 #include <iostream>
 #define M_MIN(a, b) (a < b ? a : b)
 #define M_MAX(a, b) (a < b ? b : a)
@@ -110,3 +114,4 @@ class Color {
 };
 
 //SCRIPT FROM https://github.com/FloatingBanana
+#endif // !HSV_HPP

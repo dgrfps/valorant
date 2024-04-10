@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef TRIGGER_HPP
+#define TRIGGER_HPP
+
 #include <Windows.h>
 #include <thread>
 
@@ -11,8 +14,10 @@
 class Trigger {
 public:
 	static void loop() {
-		int x = Screen::getSize().x / 2;
-		int y = Screen::getSize().y / 2;
+		auto s = Screen::getSize();
+
+		int centerx = s.x / 2;
+		int centery = s.y / 2;
 
 		RGBTRIPLE rgbTriple;
 		HDC hdc = GetDC(NULL);
@@ -30,7 +35,7 @@ public:
 						targetY = (_y < Settings::triggerHeight / 2) ? (((Settings::triggerHeight / 2) - _y) * -1) : ((Settings::triggerHeight / 2) - _y);
 						targetX = (_x < Settings::triggerWidth / 2) ? (((Settings::triggerWidth / 2) - _x) * -1) : ((Settings::triggerWidth / 2) - _x);
 
-						COLORREF color = GetPixel(hdc, x + targetX, y + targetY);
+						COLORREF color = GetPixel(hdc, centerx + targetX, centery + targetY);
 						rgbTriple.rgbtRed = GetRValue(color);
 						rgbTriple.rgbtGreen = GetGValue(color);
 						rgbTriple.rgbtBlue = GetBValue(color);
@@ -62,3 +67,4 @@ public:
 		}
 	};
 };
+#endif

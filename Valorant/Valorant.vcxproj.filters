@@ -15,19 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="new\features\Trigger.hpp">
+    <ClInclude Include="source\features\Trigger.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="new\utils\colors\HSV.hpp">
+    <ClInclude Include="source\utils\colors\HSV.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="new\utils\colors\color.hpp">
+    <ClInclude Include="source\settings\ConfigParser.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="new\settings\ConfigParser.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="new\utils\Keys.hpp">
+    <ClInclude Include="source\utils\Keys.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\imconfig.h">
@@ -60,19 +57,25 @@
     <ClInclude Include="include\imstb_truetype.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="new\render\Graphics.hpp">
+    <ClInclude Include="source\render\Graphics.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="new\utils\Screen.hpp">
+    <ClInclude Include="source\utils\Screen.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="new\menus\Logo.hpp">
+    <ClInclude Include="source\menus\Menu.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="new\settings\Settings.h">
+    <ClInclude Include="source\settings\Settings.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="new\utils\vec2.h">
+    <ClInclude Include="source\utils\vec2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\render\Style.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\utils\Keybind.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -104,16 +107,19 @@
     <ClCompile Include="include\imgui_widgets.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="new\Manager.cpp">
+    <ClCompile Include="source\Manager.hpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="new\menus\fonts\ostrich.cpp">
+    <ClCompile Include="source\menus\fonts\ostrich.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="new\menus\fonts\walkaway.cpp">
+    <ClCompile Include="source\menus\fonts\walkaway.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="new\settings\Settings.cpp">
+    <ClCompile Include="source\settings\Settings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\utils\Keys.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
