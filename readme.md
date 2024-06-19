@@ -1,6 +1,7 @@
 # VALORANT  
 **Undetected external** cheat using HSV color detection.  
-This will not mess with the addresses and memories of the game, it's 100% memory independent.  
+**Does not need Arduino, just bind a fire alias on Valorant.**  
+This will not manipulate addresses and memories of the game, it's 100% memory independent so it's almost impossible to be detected. But you might be banned if reported by players.  
   
 Customizable via menu.  
 - Panic key is 'Del', press it to exit the cheat.  
